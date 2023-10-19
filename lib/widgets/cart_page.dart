@@ -9,7 +9,7 @@ class CartPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final cart = Provider.of<CartProvider>(context).cart;
+    final cart = Provider.of<CartProvider>(context).cartItems;
 
     return Scaffold(
       appBar: AppBar(
@@ -31,11 +31,11 @@ class CartPage extends StatelessWidget {
       body: Column(
         children: [
           Expanded(
-            child: cart.items.isNotEmpty
+            child: cart.isNotEmpty
                 ? ListView.builder(
-                    itemCount: cart.items.length,
+                    itemCount: cart.length,
                     itemBuilder: (context, index) {
-                      final cartItem = cart.items[index];
+                      final cartItem = cart[index];
                       return CartItemWidget(cartItem: cartItem);
                     },
                   )
@@ -46,7 +46,7 @@ class CartPage extends StatelessWidget {
                     ),
                   ),
           ),
-          TotalPriceWidget(cart: cart),
+          TotalPriceWidget(cartItems: cart),
         ],
       ),
     );
@@ -177,9 +177,9 @@ class QuantityAdjustmentButtons extends StatelessWidget {
 }
 
 class TotalPriceWidget extends StatelessWidget {
-  final Cart cart;
+  final List<CartItem> cartItems;
 
-  const TotalPriceWidget({super.key, required this.cart});
+  const TotalPriceWidget({super.key, required this.cartItems});
 
   @override
   Widget build(BuildContext context) {
@@ -195,13 +195,16 @@ class TotalPriceWidget extends StatelessWidget {
                 "К оплате",
                 style: TextStyle(fontSize: 10, fontWeight: FontWeight.w300),
               ),
-              Text(
-                '${cart.total.toStringAsFixed(0)} руб.',
-                style: const TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
+              Consumer<CartProvider>(builder: (context, cartProvider, child) {
+                final price = cartProvider.total;
+                return Text(
+                  '${price.toStringAsFixed(0)} руб.',
+                  style: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                  ),
+                );
+              })
             ],
           ),
         ],

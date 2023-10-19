@@ -35,7 +35,7 @@ class CartButtonWhite extends StatelessWidget {
                 ),
                 Consumer<CartProvider>(
                   builder: (context, cartProvider, child) {
-                    final itemCount = cartProvider.cart.totalQuantity;
+                    final itemCount = cartProvider.totalQuantity;
                     return Container(
                       padding: const EdgeInsets.symmetric(horizontal: 8.0),
                       child: Text(
