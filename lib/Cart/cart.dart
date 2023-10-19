@@ -12,8 +12,6 @@ class CartDatabaseHelper {
 
   Future<Database> get database async {
     if (_database != null) return _database!;
-
-    // If _database is null, initialize it
     _database = await initDatabase();
     return _database!;
   }
@@ -128,7 +126,6 @@ void removeFromCart(Product product) async {
     // Find the cart item with the matching product ID and remove it from the list and database.
     final existingCartItemIndex = _cartItems.indexWhere((item) => item.productId == productId);
     if (existingCartItemIndex != -1) {
-      // Decrease the quantity by 1 unless it's already 1
       if (_cartItems[existingCartItemIndex].quantity > 1) {
         _cartItems[existingCartItemIndex].quantity -= 1;
         _db.addToCart(_cartItems[existingCartItemIndex]);

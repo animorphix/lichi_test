@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lichi_flutter/widgets/product_details.dart';
+import 'package:lichi_flutter/widgets/product_details_widget.dart';
 import 'package:provider/provider.dart';
 import '../Cart/cart.dart';
 import '../provider/change_notifier.dart';

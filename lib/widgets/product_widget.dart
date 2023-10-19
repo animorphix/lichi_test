@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lichi_flutter/widgets/product_details.dart';
+import 'package:lichi_flutter/widgets/product_details_widget.dart';
 import 'package:provider/provider.dart';
 import '../models/product_list_model.dart';
 import '../provider/change_notifier.dart';
@@ -11,11 +11,13 @@ class ProductWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final productProvider = Provider.of<ProductProvider>(context, listen: false);
+    final productProvider =
+        Provider.of<ProductProvider>(context, listen: false);
 
     return GestureDetector(
       onTap: () async {
-        final product = await productProvider.fetchProductDetail(aProduct.id ?? 1);
+        final product =
+            await productProvider.fetchProductDetail(aProduct.id ?? 1);
         Navigator.of(context).push(
           MaterialPageRoute(
             builder: (context) => ProductDetailPage(product: product),
@@ -28,7 +30,7 @@ class ProductWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             AspectRatio(
-              aspectRatio: 0.77, // Maintain aspect ratio
+              aspectRatio: 0.77,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(8.0),
                 child: Image.network(

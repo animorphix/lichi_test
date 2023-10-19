@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../Cart/cart.dart';
-import 'cart_page.dart';
+import '../Pages/cart_page.dart';
 
 class CartButtonBlack extends StatelessWidget {
   const CartButtonBlack({super.key});
@@ -31,7 +31,7 @@ class CartButtonBlack extends StatelessWidget {
                     return Container(
                       padding: const EdgeInsets.symmetric(horizontal: 8.0),
                       child: Text(
-                        itemCount>0 ? itemCount.toString() : 0.toString(),
+                        itemCount > 0 ? itemCount.toString() : 0.toString(),
                         style: const TextStyle(
                           color: Colors.white,
                           fontSize: 16,

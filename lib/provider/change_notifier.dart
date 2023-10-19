@@ -14,7 +14,7 @@ class ProductProvider with ChangeNotifier {
     notifyListeners();
   }
 
-    Future<Product> fetchProductDetail(int productId) async {
+  Future<Product> fetchProductDetail(int productId) async {
     try {
       final product = await getProductDetail(productId);
       return product;
@@ -22,13 +22,10 @@ class ProductProvider with ChangeNotifier {
       throw Exception('Failed to fetch product details: $e');
     }
   }
-
 }
-
 
 Future<void> fetchData(String category, BuildContext context) async {
-  final productList = await getCategoryProductList(category);
   final productProvider = Provider.of<ProductProvider>(context, listen: false);
+  final productList = await getCategoryProductList(category);
   productProvider.setProductList(productList);
 }
-

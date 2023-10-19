@@ -14,8 +14,11 @@ class AddedToCartScreen extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          const SizedBox(height: 8,),
-          const Text('Добавлено в корзину', style: TextStyle(fontWeight: FontWeight.w300, fontSize: 15)),
+          const SizedBox(
+            height: 8,
+          ),
+          const Text('Добавлено в корзину',
+              style: TextStyle(fontWeight: FontWeight.w300, fontSize: 15)),
           ClipRRect(
             borderRadius: BorderRadius.circular(40),
             child: Image.network(
@@ -27,9 +30,15 @@ class AddedToCartScreen extends StatelessWidget {
           ),
           Column(
             children: [
-              Text(product.aData?.name ?? "Product Name Unavailable", style: const TextStyle(fontWeight: FontWeight.w300, fontSize: 14)),
-              const SizedBox(height: 16,),
-              Text('Размер ${product.aData?.sizes?.keys.first}', style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 14)),
+              Text(product.aData?.name ?? "Product Name Unavailable",
+                  style: const TextStyle(
+                      fontWeight: FontWeight.w300, fontSize: 14)),
+              const SizedBox(
+                height: 16,
+              ),
+              Text('Размер ${product.aData?.sizes?.keys.first}',
+                  style: const TextStyle(
+                      fontWeight: FontWeight.w500, fontSize: 14)),
             ],
           ),
           Column(
@@ -38,16 +47,17 @@ class AddedToCartScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(16.0),
                 child: ElevatedButton(
                   onPressed: () {
-                            Navigator.of(context).pushReplacement(MaterialPageRoute(
-          builder: (context) => const CartPage(),
-        ));
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (context) => const CartPage(),
+                    ));
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: flutter_material.Colors.black,
-                    minimumSize: const flutter_material.Size(double.infinity, 48),
+                    minimumSize:
+                        const flutter_material.Size(double.infinity, 48),
                   ),
                   child: const Padding(
-                    padding: EdgeInsets.fromLTRB(0,16,0,16),
+                    padding: EdgeInsets.fromLTRB(0, 16, 0, 16),
                     child: Text('Перейти в корзину',
                         style: TextStyle(color: flutter_material.Colors.white)),
                   ),

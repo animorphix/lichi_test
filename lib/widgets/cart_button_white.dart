@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../Cart/cart.dart';
-import 'cart_page.dart';
+import '../Pages/cart_page.dart';
 
 class CartButtonWhite extends StatelessWidget {
   const CartButtonWhite({super.key});

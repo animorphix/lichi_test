@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final product = productFromJson(jsonString);
-
 import 'dart:convert';
 
 Product productFromJson(String str) => Product.fromJson(json.decode(str));
@@ -256,7 +252,7 @@ class Current {
         value: json["value"],
         show: json["show"],
         price: json["price"],
-        colorSample: json["color_sample"] == null ? null : json["color_sample"].toString(), //ColorSample.fromJson(json["color_sample"]),
+        colorSample: json["color_sample"] == null ? null : json["color_sample"].toString(),
         photo: json["photo"] == null ? null : Photo.fromJson(json["photo"]),
     );
 

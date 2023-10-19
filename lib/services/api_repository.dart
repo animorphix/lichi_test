@@ -5,7 +5,6 @@ import 'package:lichi_flutter/models/product_list_model.dart';
 
 import '../models/product_model.dart';
 
-// Метод для получения товаров из категории для каталога
 Future<ProductList> getCategoryProductList(String category) async {
   const String url = 'https://api.lichi.com/category/get_category_product_list';
 
@@ -33,7 +32,6 @@ Future<ProductList> getCategoryProductList(String category) async {
   }
 }
 
-// Метод для получения информации о товаре по идентификатору
 Future<Product> getProductDetail(int productId) async {
   const String url = 'https://api.lichi.com/product/get_product_detail';
   final Map<String, String> queryParams = {
