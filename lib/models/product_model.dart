@@ -144,7 +144,7 @@ class AData {
         measurements: Map.from(json["measurements"]!).map((k, v) => MapEntry<String, List<Measurement>>(k, List<Measurement>.from(v.map((x) => Measurement.fromJson(x))))),
         measurementsUnit: json["measurements_unit"],
         model: json["model"] == null ? [] : List<dynamic>.from(json["model"]!.map((x) => x)),
-        stores: json["stores"] != null ? json["stores"].toString() : null,
+        stores: json["stores"]?.toString(),
         sizes: Map.from(json["sizes"]!).map((k, v) => MapEntry<String, Size>(k, Size.fromJson(v))),
         isFfm: json["is_ffm"],
         colors: json["colors"] == null ? null : Colors.fromJson(json["colors"]),
@@ -252,7 +252,7 @@ class Current {
         value: json["value"],
         show: json["show"],
         price: json["price"],
-        colorSample: json["color_sample"] == null ? null : json["color_sample"].toString(),
+        colorSample: json["color_sample"]?.toString(),
         photo: json["photo"] == null ? null : Photo.fromJson(json["photo"]),
     );
 

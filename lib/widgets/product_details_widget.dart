@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart' as flutter_material;
-import 'package:flutter/rendering.dart';
 import 'package:lichi_flutter/widgets/cart_button_white.dart';
 import 'package:provider/provider.dart';
 import '../Cart/cart.dart';
@@ -124,7 +123,7 @@ class ProductDetailPage extends StatelessWidget {
                         const flutter_material.Size(double.infinity, 48),
                   ),
                   child: const Text(
-                    'Add to Cart',
+                    'Добавить в корзину',
                     style: TextStyle(color: flutter_material.Colors.white),
                   ),
                 ),

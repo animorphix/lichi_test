@@ -13,11 +13,11 @@ class CartPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Center(
-            child: Text(
+        centerTitle: true,
+        title: const Text(
           'Корзина',
           style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
-        )),
+        ),
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back_ios_new,
@@ -41,8 +41,9 @@ class CartPage extends StatelessWidget {
                   )
                 : const Center(
                     child: Text(
-                      'Your cart is empty',
-                      style: TextStyle(fontSize: 18),
+                      'Корзина пустая \n Добавьте все что вы хотите.',
+                      style: TextStyle(fontSize: 13),
+                      textAlign: TextAlign.center,
                     ),
                   ),
           ),

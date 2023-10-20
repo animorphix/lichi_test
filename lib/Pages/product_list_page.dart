@@ -19,15 +19,15 @@ class ProductListPage extends StatelessWidget {
         flexibleSpace: Container(
           color: Colors.white,
         ),
-        title: const Center(
-          child: Text(
+        centerTitle: true,
+        title: const Text(
             'Каталог товаров',
             style: TextStyle(
               fontSize: 12,
             ),
             textAlign: TextAlign.right,
           ),
-        ),
+        
         actions: const <Widget>[
           CartButtonBlack(),
         ],
